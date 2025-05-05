@@ -48,7 +48,7 @@ const About = () => {
               </h2>
               <p className="text-gray-600 mb-4">
                 Founded by Manu Rawal, Lensup Photography has been capturing
-                beautiful moments for families and professionals since 2015. Our
+                beautiful moments for families and professionals since 2024. Our
                 journey began with a simple belief: every moment deserves to be
                 preserved in its most authentic and beautiful form.
               </p>

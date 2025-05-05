@@ -1,15 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin } from "lucide-react";
 
 const Contact = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    // Type the event.target as HTMLFormElement to access its form elements
     const form = event.target as HTMLFormElement;
 
-    // Create a new URLSearchParams object to send data
     const formData = new URLSearchParams({
       Name: (form.elements.namedItem("name") as HTMLInputElement).value,
       Email: (form.elements.namedItem("email") as HTMLInputElement).value,
@@ -17,6 +16,8 @@ const Contact = () => {
       Message: (form.elements.namedItem("message") as HTMLTextAreaElement)
         .value,
     });
+
+    setShowPopup(true); // Show popup immediately
 
     const url =
       "https://script.google.com/macros/s/AKfycbxF5rrhAzwFIyLnasZAbm3SGlGgowDCz6gqcw5TLSugMjHD7MUL0CTv6SCq7ijAbXim2g/exec";
@@ -31,16 +32,38 @@ const Contact = () => {
       .then((response) => response.text())
       .then((data) => {
         console.log(data);
-        // Optionally handle success feedback here
+        form.reset(); // Reset form after submission
       })
       .catch((error) => {
         console.error("Error:", error);
-        // Optionally handle error feedback here
       });
   };
 
+  useEffect(() => {
+    if (showPopup) {
+      const timer = setTimeout(() => {
+        setShowPopup(false);
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [showPopup]);
+
   return (
-    <div className="bg-white">
+    <div className="bg-white relative">
+      {/* Popup */}
+      {showPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm text-center">
+            <h2 className="text-xl font-bold mb-4 text-purple-700">
+              Enquiry Noted!
+            </h2>
+            <p className="text-gray-700">
+              A concerned personnel will be contacting you shortly.
+            </p>
+          </div>
+        </div>
+      )}
+
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -63,12 +86,12 @@ const Contact = () => {
               className="text-xl text-gray-600 max-w-2xl mx-auto"
             >
               Let's discuss your photography needs and create beautiful memories
-              together
+              together.
             </motion.p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Contact Form */}
+            {/* Form */}
             <motion.div
               initial={{ x: -50, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
@@ -87,6 +110,7 @@ const Contact = () => {
                     type="text"
                     id="name"
                     name="name"
+                    required
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                     placeholder="Your name"
                   />
@@ -102,6 +126,7 @@ const Contact = () => {
                     type="email"
                     id="email"
                     name="email"
+                    required
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                     placeholder="your@email.com"
                   />
@@ -116,6 +141,7 @@ const Contact = () => {
                   <select
                     id="service"
                     name="service"
+                    required
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                   >
                     <option value="">Select a service</option>
@@ -137,6 +163,7 @@ const Contact = () => {
                     id="message"
                     name="message"
                     rows={4}
+                    required
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                     placeholder="Tell us about your photography needs"
                   ></textarea>
@@ -150,7 +177,7 @@ const Contact = () => {
               </form>
             </motion.div>
 
-            {/* Contact Information */}
+            {/* Contact Info */}
             <motion.div
               initial={{ x: 50, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
@@ -173,9 +200,9 @@ const Contact = () => {
                   <div className="flex items-center">
                     <MapPin className="h-6 w-6 text-purple-600 mr-4" />
                     <a
-                      href="
-https://maps.google.com/?q=-12.809100,-6.094000"
+                      href="https://maps.google.com/?q=-12.809100,-6.094000"
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="text-gray-600"
                     >
                       164, CherryLane, above HappyEndings, beside SOBHA JASMINE,
