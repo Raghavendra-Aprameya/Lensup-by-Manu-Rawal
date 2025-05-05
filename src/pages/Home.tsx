@@ -37,15 +37,19 @@ const Home = () => {
           >
             Capturing Life's Beautiful Moments
           </motion.p>
-          <motion.a
+
+          <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.6 }}
-            href="/contact"
-            className="bg-purple-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-purple-700 transition-colors"
           >
-            Book a Session
-          </motion.a>
+            <Link
+              to="/contact"
+              className="bg-purple-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-purple-700 transition-colors"
+            >
+              Book a Session
+            </Link>
+          </motion.div>
         </div>
       </motion.section>
 
