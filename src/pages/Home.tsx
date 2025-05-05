@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Camera, Heart, Users, Baby } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -94,12 +95,12 @@ const Home = () => {
           <p className="text-xl mb-8">
             Let's create beautiful memories together
           </p>
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="bg-white text-purple-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition-colors"
           >
             Get in Touch
-          </a>
+          </Link>
         </div>
       </section>
     </div>
