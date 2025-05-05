@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Pricing = () => {
   const packages = [
@@ -88,12 +89,12 @@ const Pricing = () => {
                       ))}
                     </ul>
                   </div>
-                  <a
-                    href="/contact"
+                  <Link
+                    to="/contact"
                     className="block w-full mt-auto text-center bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors"
                   >
                     Book Now
-                  </a>
+                  </Link>
                 </div>
               </motion.div>
             ))}
@@ -102,12 +103,12 @@ const Pricing = () => {
           <div className="mt-16 text-center">
             <p className="text-gray-600">
               Need a custom package?{" "}
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="text-purple-600 font-semibold hover:text-purple-700"
               >
                 Contact us
-              </a>{" "}
+              </Link>{" "}
               for personalized options.
             </p>
           </div>
