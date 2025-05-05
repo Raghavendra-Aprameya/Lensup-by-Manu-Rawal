@@ -3,21 +3,21 @@ import { motion } from "framer-motion";
 
 const Portfolio = () => {
   const images = [
-    "src/Assets/Maternity1.jpg",
-    "src/Assets/_HEC7297.jpg",
-    "src/Assets/Maternity2.jpeg",
-    "src/Assets/_HEC8195.jpg",
-    "src/Assets/Maternity3.jpeg",
-    "src/Assets/_HEC6077.jpg",
-    "src/Assets/_HEC6427.jpg",
-    "src/Assets/_HEC6618.jpg",
-    "src/Assets/_HEC7130.jpg",
-    "src/Assets/_HEC7195.jpg",
-    "src/Assets/_HEC7313.jpg",
-    "src/Assets/_HEC7453.jpg",
-    "src/Assets/_HEC7676.jpg",
-    "src/Assets/IMG_20240624_135833_634.jpg",
-    "src/Assets/WhatsApp Image 2025-04-26 at 11.33.56.jpeg",
+    "/Assets/Maternity1.jpg",
+    "/Assets/_HEC7297.jpg",
+    "/Assets/Maternity2.jpeg",
+    "/Assets/_HEC8195.jpg",
+    "/Assets/Maternity3.jpeg",
+    "/Assets/_HEC6077.jpg",
+    "/Assets/_HEC6427.jpg",
+    "/Assets/_HEC6618.jpg",
+    "/Assets/_HEC7130.jpg",
+    "/Assets/_HEC7195.jpg",
+    "/Assets/_HEC7313.jpg",
+    "/Assets/_HEC7453.jpg",
+    "/Assets/_HEC7676.jpg",
+    "/Assets/IMG_20240624_135833_634.jpg",
+    "/Assets/WhatsApp Image 2025-04-26 at 11.33.56.jpeg",
   ];
 
   return (

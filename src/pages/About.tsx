@@ -68,7 +68,7 @@ const About = () => {
               className="relative h-[38rem]"
             >
               <img
-                src="src/Assets/ManuRawal.jpg"
+                src="/Assets/ManuRawal.jpg"
                 alt="A picture of Manu Rawal"
                 className="w-full h-full object-cover rounded-lg shadow-xl"
               />
