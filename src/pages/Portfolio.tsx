@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 
 const Portfolio = () => {
@@ -18,6 +17,9 @@ const Portfolio = () => {
     "/Assets/_HEC7676.jpg",
     "/Assets/IMG_20240624_135833_634.jpg",
     "/Assets/WhatsApp Image 2025-04-26 at 11.33.56.jpeg",
+    "public/Assets/_HEC7404.jpg",
+    "/Assets/_HEC7419-1.jpg",
+    "/Assets/maternity.jpeg",
   ];
 
   return (
@@ -33,7 +35,7 @@ const Portfolio = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+              className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
             >
               Gallery
             </motion.h1>
@@ -47,7 +49,7 @@ const Portfolio = () => {
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-4">
             {images.map((image, index) => (
               <motion.div
                 key={index}
@@ -55,7 +57,7 @@ const Portfolio = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
-                className="relative aspect-square overflow-hidden rounded-lg shadow-lg"
+                className="relative h-[30rem] overflow-hidden rounded-lg shadow-lg"
               >
                 <img
                   src={image}
