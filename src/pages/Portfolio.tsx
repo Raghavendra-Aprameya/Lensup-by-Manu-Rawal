@@ -17,7 +17,7 @@ const Portfolio = () => {
     "/Assets/_HEC7676.jpg",
     "/Assets/IMG_20240624_135833_634.jpg",
     "/Assets/WhatsApp Image 2025-04-26 at 11.33.56.jpeg",
-    "public/Assets/_HEC7404.jpg",
+    "/Assets/_HEC7404.jpg",
     "/Assets/_HEC7419-1.jpg",
     "/Assets/maternity.jpeg",
   ];
